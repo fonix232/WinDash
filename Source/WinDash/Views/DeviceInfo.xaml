@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="WinDash.Views.DeviceInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinDash.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:WinDash.Models"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid HorizontalAlignment="Right">
+            <StackPanel Margin="16,48">
+                <Grid HorizontalAlignment="Center" Width="240" Height="240">
+                    <Ellipse Margin="0" Width="240" Height="240" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Ellipse.Fill>
+                            <SolidColorBrush Color="{ThemeResource SystemAccentColor}" />
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Image x:Name="BoardImage" VerticalAlignment="Center" Source="{Binding DevInfo.BoardImage}" HorizontalAlignment="Center"/>
+                </Grid>
+                <TextBlock Grid.Row="4" Text="NETWORK INFORMATION" FontFamily="Segoe UI Regular" FontSize="16" Margin="0,16,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <StackPanel Margin="16,48">
+                <TextBlock Text="{Binding DevInfo.BoardName}" FontSize="32" FontWeight="Light" Margin="0,8,8,32">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{ThemeResource SystemAccentColor}" />
+                    </TextBlock.Foreground>
+                </TextBlock>
+                <TextBlock Text="Device Name" Style="{StaticResource BaseTextBlockStyle}" />
+                <TextBlock Text="{Binding DevInfo.Name}" Style="{StaticResource BodyTextBlockStyle}" Opacity="0.4" />
+                <TextBlock Text="Network" x:Name="NetworkNameCaption" Style="{StaticResource BaseTextBlockStyle}" Margin="0,16,0,0" />
+                <TextBlock Text="{Binding NetInfo.CurrentNetworkName}" Style="{StaticResource BodyTextBlockStyle}" Opacity="0.4" />
+
+                <TextBlock Text="OS Version" x:Name="OSVersionCaption" Style="{StaticResource BaseTextBlockStyle}" Margin="0,16,0,0" />
+                <TextBlock Text="{Binding SoftInfo.OSVersion}" Style="{StaticResource BodyTextBlockStyle}" Opacity="0.4"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

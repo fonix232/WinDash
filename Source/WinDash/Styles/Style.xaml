@@ -1,0 +1,22 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="WinDash.Styles.Style">
+
+    <FontFamily x:Key="IoTIconFontFamily">ms-appx:///Assets/Fonts/IOTMDL2.1.35.ttf#IOT MDL2 Assets</FontFamily>
+    <FontFamily x:Key="IconFontFamily">Segoe MDL2 Assets</FontFamily>
+    <x:String x:Key="IconShutdown">&#xE7E8;</x:String>
+    <x:String x:Key="IconSettings">&#xE713;</x:String>
+    <x:String x:Key="IconLaptop">&#xE770;</x:String>
+    <x:String x:Key="IconEthernet">&#xE839;</x:String>
+    <x:String x:Key="IconWifiFull">&#xE908;</x:String>
+    <x:String x:Key="IconWifi34">&#xE907;</x:String>
+    <x:String x:Key="IconWifi12">&#xE906;</x:String>
+    <x:String x:Key="IconWifi14">&#xE905;</x:String>
+    <x:String x:Key="IconWifiNone">&#xE904;</x:String>
+    <x:String x:Key="IconBack">&#xE72B;</x:String>
+    <x:String x:Key="IconPrototypingBoard">&#xE959;</x:String>
+    <x:String x:Key="IconEducation">&#xE7BE;</x:String>
+
+    <Color x:Key="SystemAccentColor">#005a98</Color>
+</ResourceDictionary>
