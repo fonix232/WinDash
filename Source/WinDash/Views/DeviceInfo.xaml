@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:model="using:WinDash.Models"
+    DataContext="{Binding DeviceInfo, Source={StaticResource Locator}}"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -24,7 +25,7 @@
                             <SolidColorBrush Color="{ThemeResource SystemAccentColor}" />
                         </Ellipse.Fill>
                     </Ellipse>
-                    <Image x:Name="BoardImage" VerticalAlignment="Center" Source="{Binding DevInfo.BoardImage}" HorizontalAlignment="Center"/>
+                    <Image x:Name="BoardImage" VerticalAlignment="Center" Source="{Binding DeviceInfo.BoardImage}" HorizontalAlignment="Center"/>
                 </Grid>
                 <TextBlock Grid.Row="4" Text="NETWORK INFORMATION" FontFamily="Segoe UI Regular" FontSize="16" Margin="0,16,0,0"/>
             </StackPanel>
@@ -32,18 +33,18 @@
 
         <Grid Grid.Column="2">
             <StackPanel Margin="16,48">
-                <TextBlock Text="{Binding DevInfo.BoardName}" FontSize="32" FontWeight="Light" Margin="0,8,8,32">
+                <TextBlock Text="{x:Bind ViewModel.DeviceInfo.BoardName}" FontSize="32" FontWeight="SemiLight" Margin="0,8,8,32">
                     <TextBlock.Foreground>
                         <SolidColorBrush Color="{ThemeResource SystemAccentColor}" />
                     </TextBlock.Foreground>
                 </TextBlock>
+                
                 <TextBlock Text="Device Name" Style="{StaticResource BaseTextBlockStyle}" />
-                <TextBlock Text="{Binding DevInfo.Name}" Style="{StaticResource BodyTextBlockStyle}" Opacity="0.4" />
-                <TextBlock Text="Network" x:Name="NetworkNameCaption" Style="{StaticResource BaseTextBlockStyle}" Margin="0,16,0,0" />
-                <TextBlock Text="{Binding NetInfo.CurrentNetworkName}" Style="{StaticResource BodyTextBlockStyle}" Opacity="0.4" />
-
-                <TextBlock Text="OS Version" x:Name="OSVersionCaption" Style="{StaticResource BaseTextBlockStyle}" Margin="0,16,0,0" />
-                <TextBlock Text="{Binding SoftInfo.OSVersion}" Style="{StaticResource BodyTextBlockStyle}" Opacity="0.4"/>
+                <TextBlock Text="{x:Bind ViewModel.DeviceInfo.Name}" Style="{StaticResource BodyTextBlockStyle}" Opacity="0.4" />
+                <TextBlock Text="Network" Style="{StaticResource BaseTextBlockStyle}" Margin="0,16,0,0" />
+                <TextBlock Text="{x:Bind ViewModel.NetworkInfo.CurrentNetworkName}" Style="{StaticResource BodyTextBlockStyle}" Opacity="0.4" />
+                <TextBlock Text="OS Version"  Style="{StaticResource BaseTextBlockStyle}" Margin="0,16,0,0" />
+                <TextBlock Text="{x:Bind ViewModel.SoftwareInfo.OSVersion}" Style="{StaticResource BodyTextBlockStyle}" Opacity="0.4"/>
             </StackPanel>
         </Grid>
     </Grid>

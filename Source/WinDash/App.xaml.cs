@@ -33,7 +33,12 @@ namespace WinDash
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            Current = this;
         }
+
+
+        public static new App Current { get; set; }
+        public ViewModels.ViewModelLocator Locator { get { return (ViewModels.ViewModelLocator)App.Current.Resources["Locator"]; } }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points

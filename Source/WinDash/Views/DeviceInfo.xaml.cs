@@ -25,14 +25,20 @@ namespace WinDash.Views
         public DeviceInfo()
         {
             this.InitializeComponent();
-            this.DataContext = this;
+
+            DataContextChanged += (sender,e) =>
+            {
+                this.ViewModel = (ViewModels.DeviceInfoViewModel)DataContext;
+                
+            };
+        }
+
+        private void DeviceInfo_DataContextChanged(FrameworkElement sender, DataContextChangedEventArgs args)
+        {
+            throw new NotImplementedException();
         }
 
 
-
-        public Models.DeviceInfo DevInfo { get; set; } = new Models.DeviceInfo();
-        public Models.NetworkInfo NetInfo { get; set; } = new Models.NetworkInfo();
-
-        public Models.SoftwareInfo SoftInfo { get; set; } = new Models.SoftwareInfo();
+        public ViewModels.DeviceInfoViewModel ViewModel { get; set; }
     }
 }

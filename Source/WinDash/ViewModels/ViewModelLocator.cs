@@ -11,27 +11,32 @@ namespace WinDash.ViewModels
 {
     public class ViewModelLocator
     {
-        private static NavigationService _navService { get; set; }
+        //private static NavigationService _navService { get; set; }
 
         static ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            _navService = new NavigationService();
-            SimpleIoc.Default.Register<INavigationService>(() => _navService);
-            SimpleIoc.Default.Register<IDialogService, DialogService>();
+            //_navService = new NavigationService();
+            //SimpleIoc.Default.Register<INavigationService>(() => _navService);
+            //SimpleIoc.Default.Register<IDialogService, DialogService>();
 
-            ConfigureNavigation();
+            //ConfigureNavigation();
+
+
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<DeviceInfoViewModel>();
+            SimpleIoc.Default.Register<SettingsViewModel>();
         }
 
-        private static void ConfigureNavigation()
-        {
-            _navService.Configure("DeviceInfo", typeof(Views.DeviceInfo));
-            _navService.Configure("Settings", typeof(Views.Settings));
-        }
+        //private static void ConfigureNavigation()
+        //{
+        //    _navService.Configure("DeviceInfo", typeof(Views.DeviceInfo));
+        //    _navService.Configure("Settings", typeof(Views.Settings));
+        //}
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "This non-static member is needed for data binding purposes.")]
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
+        public DeviceInfoViewModel DeviceInfo => ServiceLocator.Current.GetInstance<DeviceInfoViewModel>();
+        public SettingsViewModel Settings => ServiceLocator.Current.GetInstance<SettingsViewModel>();
     }
 }

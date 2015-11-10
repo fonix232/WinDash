@@ -3,10 +3,12 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WinDash"
+    xmlns:vm="using:WinDash.ViewModels"
     xmlns:styles="using:WinDash.Styles"
     RequestedTheme="Dark">
     <Application.Resources>
         <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="Locator" />
             <ResourceDictionary.MergedDictionaries>
                 <styles:Style x:Name="Style" />
                 <ResourceDictionary Source="Styles/Style.xaml" />
