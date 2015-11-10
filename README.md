@@ -33,3 +33,19 @@ Build number always corresponds with the build date (appended with an extra numb
   - OS information (OS version)
 - Basic MVVM structure
 - Basic UI layout using the AppShell model
+
+
+## Dependencies
+
+WinDash aims to require the least possible dependencies - especially third parties. However for some advanced features, it is unavoidable to add some libraries.
+
+These additions include:
+
+- Json.Net 7.0.1
+- MVVMLight Libs 5.2.0
+
+## Thanks
+
+A big thanks goes to Microsoft - if they didn't screw up the Dashboard so badly, I'd be sitting bored thinking what to write for my first IoT project. Thanks to them, now I'm not bored, and actually have a nice long project to work on!
+
+Also, MS guys, thanks for the many many code samples for accessing and writing various information about the device.
